@@ -11,7 +11,7 @@ export default function Career() {
         {`I'm not too finicky about particular languages or libraries. I have the most experience with JS technologies but I'm always open to learning something new.`}
       </p>
       <p className="p-4 text-lg font-mono">
-        {`DevOps has been my main work-related interest, and I hope to be able to leverage my contuining buildup of such knowledge into my career.`}
+        {`DevOps has been my main work-related interest, and I hope to be able to leverage the continual buildup of such knowledge into my career.`}
       </p>
     </div>
   )
