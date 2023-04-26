@@ -50,12 +50,12 @@ const attributes: PostAttribute[] = [
 ]
 
 export default function PostsList() {
-  const handlePostSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
+  const handlePostSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
 
     const form = event.target;
     const formData = new FormData(form as HTMLFormElement);
-
+    console.log({formData})
     // @ts-ignore
     const titleVal = form[0]?.value;
     // @ts-ignore
