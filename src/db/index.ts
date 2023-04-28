@@ -1,9 +1,9 @@
+import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { db as firestore } from '../firebase';
-import { collection, getDocs } from 'firebase/firestore';
 
 export const db = {
-  posts: firestore.collection('posts'),
-  tasks: firestore.collection('tasks'),
+  posts: collection(firestore, 'posts'),
+  tasks: collection(firestore, 'tasks'),
 };
 
 export interface Post {
@@ -25,7 +25,7 @@ export interface Task {
 
 export const getPosts = async () => {
   try {
-    const { docs } = await db.posts.get();
+    const { docs } = await getDocs(db.posts);
 
     return docs.map(doc => {
       const docData = doc.data() as Post;
@@ -41,10 +41,19 @@ export const getPosts = async () => {
   }
 };
 
+export const addPost = async (postPayload: Post) => {
+  try {
+    const postRef = await addDoc(collection(firestore, "posts"), postPayload);
+
+    return postRef;
+  } catch (e) {
+    console.error('Error adding new post:', e);
+  }
+};
 
 export const getTasks = async () => {
   try {
-    const { docs } = await db.tasks.get();
+    const { docs } = await getDocs(db.tasks);
 
     return docs.map(doc => doc.data() as Post);
   } catch (e) {
