@@ -1,13 +1,16 @@
-import Link from 'next/link';
+'use client';
 
-import PostsList from "@/components/PostsList";
+import { useRouter } from 'next/navigation';
+
 import PostForm from '@/components/PostForm';
-import Button from "@/components/Button";
 
-import { bucket } from "@/firebase";
-import { getPosts } from "@/db";
+export default function Posts() {
+  const router = useRouter();
 
-export default async function Posts() {
+  const handleRedirect = () => {
+    router.push('/posts');
+  }
+
   return (
     <div className='max-w-6xl my-6 mx-auto py-4 flex flex-col items-center space-x-4 bg-zinc-50 border-2 border-stone-200 rounded-xl shadow-lg opacity-75'>
       <div className='px-6 flex flex-row justify-between w-full'>
@@ -15,7 +18,7 @@ export default async function Posts() {
           Add new post!
         </h1>
       </div>
-      <PostForm />
+      <PostForm handleSubmit={handleRedirect} />
     </div>
   )
 }

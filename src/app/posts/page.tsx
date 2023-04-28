@@ -2,8 +2,6 @@ import Link from 'next/link';
 
 import PostsList from "@/components/PostsList";
 import Button from "@/components/Button";
-
-import { bucket } from "@/firebase";
 import { getPosts } from "@/db";
 
 export default async function Posts() {
