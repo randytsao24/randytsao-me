@@ -3,6 +3,10 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['firebasestorage.googleapis.com'],
+    formats: ['image/avif', 'image/webp'],
+  },
   webpack (config) {
     config.resolve.fallback = {
       ...config.resolve.fallback,
