@@ -7,5 +7,5 @@ The site is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-
 #### Getting Started
 
 1. `npm i`
-2. Set up service account credentials (`service-account.json`) in the root directory.
+2. Set up .env (see Firebase config)
 3. `npm run dev`

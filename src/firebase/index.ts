@@ -4,8 +4,6 @@ import { getStorage } from 'firebase/storage';
 import admin from 'firebase-admin';
 
 // Initialize Firebase
-const serviceAccount = require('../../service-account.json');
-
 let app;
 
 if (!getApps().length) {
