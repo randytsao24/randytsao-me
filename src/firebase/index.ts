@@ -6,22 +6,18 @@ import admin from 'firebase-admin';
 // Initialize Firebase
 let app;
 
+const config = {
+  apiKey: 'AIzaSyCEDpTymusBauoW6yUxWg6tcZm_EzKRjx0',
+  appId: "1:42039643605:web:1e000eed41b150742cc15c",
+  projectId: 'randytsao-me',
+  authDomain: "randytsao-me.firebaseapp.com",
+  storageBucket: "randytsao-me.appspot.com",
+  messagingSenderId: "42039643605",
+  measurementId: "G-PSHE0WFYLR",
+}
+
 if (!getApps().length) {
-  if (process.env.FIREBASE_SERVICE_ACCOUNT_RANDYTSAO_ME) {
-    app = admin.initializeApp({
-      credential: admin.credential.cert(process.env.FIREBASE_SERVICE_ACCOUNT_RANDYTSAO_ME),
-    });
-  } else {
-    app = initializeApp({
-      apiKey: process.env.FIREBASE_API_KEY,
-      appId: process.env.FIREBASE_APP_ID,
-      projectId: 'randytsao-me',
-      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-      storageBucket: 'randytsao-me.appspot.com', // TODO: Figure out why env var isnt casting
-      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-      measurementId: process.env.FIREBASE_MEASUREMENT_ID,
-    });
-  }
+  app = initializeApp(config);
 }
 
 export const db = getFirestore(app as FirebaseApp);

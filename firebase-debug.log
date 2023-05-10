@@ -1,0 +1,29 @@
+[debug] [2023-05-10T21:52:13.548Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T21:52:13.550Z] Command:       /Users/randytsao/.nvm/versions/node/v18.12.1/bin/node /Users/randytsao/.nvm/versions/node/v18.12.1/bin/firebase deploy
+[debug] [2023-05-10T21:52:13.551Z] CLI Version:   12.0.0
+[debug] [2023-05-10T21:52:13.551Z] Platform:      darwin
+[debug] [2023-05-10T21:52:13.551Z] Node Version:  v18.12.1
+[debug] [2023-05-10T21:52:13.552Z] Time:          Wed May 10 2023 17:52:13 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-05-10T21:52:13.552Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T21:52:13.616Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T21:52:13.617Z] > authorizing via signed-in user (randytsao24@gmail.com)
+[debug] [2023-05-10T21:52:13.617Z] [iam] checking project randytsao-me for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2023-05-10T21:52:13.619Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/randytsao-me:testIamPermissions [none]
+[debug] [2023-05-10T21:52:13.619Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/randytsao-me:testIamPermissions x-goog-quota-user=projects/randytsao-me
+[debug] [2023-05-10T21:52:13.619Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/randytsao-me:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-05-10T21:52:13.915Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/randytsao-me:testIamPermissions 200
+[debug] [2023-05-10T21:52:13.915Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/randytsao-me:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-05-10T21:52:13.917Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/randytsao-me [none]
+[debug] [2023-05-10T21:52:14.388Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/randytsao-me 200
+[debug] [2023-05-10T21:52:14.388Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/randytsao-me {"projectId":"randytsao-me","projectNumber":"42039643605","displayName":"randytsao-me","name":"projects/randytsao-me","resources":{"hostingSite":"randytsao-me","storageBucket":"randytsao-me.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_b45a7dd1-875b-4dc1-854f-c6c4c4aa7636"}
+[debug] [2023-05-10T21:52:17.462Z] defaultcredentials: writing to file /Users/randytsao/.config/firebase/randytsao24_gmail_com_application_default_credentials.json
+[debug] [2023-05-10T21:52:17.464Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/randytsao-me/sites pageToken=&pageSize=10
+[debug] [2023-05-10T21:52:17.998Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/randytsao-me/sites 200
+[debug] [2023-05-10T21:52:17.998Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/randytsao-me/sites {"sites":[{"name":"projects/randytsao-me/sites/randytsao-me","defaultUrl":"https://randytsao-me.web.app","appId":"1:42039643605:web:1e000eed41b150742cc15c","type":"DEFAULT_SITE"}]}
+[debug] [2023-05-10T21:52:17.998Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:42039643605:web:1e000eed41b150742cc15c/config [none]
+[debug] [2023-05-10T21:52:18.713Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:42039643605:web:1e000eed41b150742cc15c/config 200
+[debug] [2023-05-10T21:52:18.713Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:42039643605:web:1e000eed41b150742cc15c/config {"projectId":"randytsao-me","appId":"1:42039643605:web:1e000eed41b150742cc15c","storageBucket":"randytsao-me.appspot.com","locationId":"us-central","apiKey":"AIzaSyCEDpTymusBauoW6yUxWg6tcZm_EzKRjx0","authDomain":"randytsao-me.firebaseapp.com","messagingSenderId":"42039643605","measurementId":"G-PSHE0WFYLR"}
+[debug] [2023-05-10T21:52:49.602Z] Error: ENOENT: no such file or directory, open '/Users/randytsao/Projects/randytsao-me/.next/server/client-reference-manifest.js'
+[error] 
+[error] Error: An unexpected error has occurred.
