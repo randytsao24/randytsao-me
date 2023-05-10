@@ -8,9 +8,13 @@ interface PostCardProps {
 
 export default function PostsList({ post }: PostCardProps) {
   const { createdAt } = post;
-  const postDate = createdAt.toDate();
-  const displayDate = postDate
-    .toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' });
+  let displayDate = null;
+
+  if (createdAt) {
+    const postDate = createdAt.toDate();
+    displayDate = postDate
+      .toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
 
   return (
     <div key={post.id} className='my-4 px-4 w-full flex flex-row justify-between cursor-pointer'>
