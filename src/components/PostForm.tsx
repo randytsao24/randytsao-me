@@ -86,7 +86,7 @@ export default function PostForm({ handleSubmit }: PostFormProps) {
     }
 
     // Upload image to Firebase and get download URL
-    const fileInput = document.getElementById('form-image-input');
+    const fileInput = document.getElementById('form-image-input') as HTMLInputElement;
 
     // @ts-ignore
     if (fileInput?.files?.length && fileInput.files[0].name) {
