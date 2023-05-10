@@ -1,4 +1,12 @@
-import { addDoc, collection, getDocs } from 'firebase/firestore';
+import {
+  addDoc,
+  collection, 
+  getDocs,
+  orderBy,
+  query,
+  serverTimestamp,
+  Timestamp,
+} from 'firebase/firestore';
 import { db as firestore } from '../firebase';
 
 export const db = {
@@ -9,6 +17,7 @@ export const db = {
 export interface Post {
   author: string;
   body: string;
+  createdAt?: Timestamp;
   id: string;
   imageUrl: string | null;
   subtitle: string | null;
@@ -25,7 +34,8 @@ export interface Task {
 
 export const getPosts = async () => {
   try {
-    const { docs } = await getDocs(db.posts);
+    const q = query(db.posts, orderBy('createdAt', 'desc'));
+    const { docs } = await getDocs(q);
 
     return docs.map(doc => {
       const docData = doc.data() as Post;
@@ -43,7 +53,10 @@ export const getPosts = async () => {
 
 export const addPost = async (postPayload: Post) => {
   try {
-    const postRef = await addDoc(collection(firestore, "posts"), postPayload);
+    const postRef = await addDoc(collection(firestore, "posts"), {
+      createdAt: serverTimestamp(),
+      ...postPayload,
+    });
 
     return postRef;
   } catch (e) {
