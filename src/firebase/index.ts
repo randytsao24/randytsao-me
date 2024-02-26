@@ -1,7 +1,6 @@
 import { initializeApp, getApps, FirebaseApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
-import admin from 'firebase-admin';
 
 // Initialize Firebase
 let app;
